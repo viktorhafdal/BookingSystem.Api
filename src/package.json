@@ -1,0 +1,28 @@
+{
+  "name": "bookingsystem.api",
+  "version": "1.0.0",
+  "description": "Restful API for BookingSystem (https://github.com/viktorhafdal/BookingSystem)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viktorhafdal/BookingSystem.Api.git"
+  },
+  "keywords": [
+    "rest",
+    "restful",
+    "node",
+    "api"
+  ],
+  "author": "viktorhafdal, simgr01",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viktorhafdal/BookingSystem.Api/issues"
+  },
+  "homepage": "https://github.com/viktorhafdal/BookingSystem.Api#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
