@@ -4,7 +4,9 @@
   "description": "Restful API for BookingSystem (https://github.com/viktorhafdal/BookingSystem)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "dotenv -e .env.development nodemon ./server.js",
+    "prod": "dotenv -e .env.production node ./server.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +20,16 @@
   ],
   "author": "viktorhafdal, simgr01",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/viktorhafdal/BookingSystem.Api/issues"
   },
   "homepage": "https://github.com/viktorhafdal/BookingSystem.Api#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
