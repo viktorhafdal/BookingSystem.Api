@@ -2,11 +2,13 @@
   "name": "bookingsystem.api",
   "version": "1.0.0",
   "description": "Restful API for BookingSystem (https://github.com/viktorhafdal/BookingSystem)",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "dotenv -e .env.development nodemon ./server.js",
-    "prod": "dotenv -e .env.production node ./server.js"
+    "start": "dotenv -e .env.production node ./server.ts",
+    "dev": "dotenv -e .env.development nodemon --exec ts-node ./server.ts",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,6 @@
   ],
   "author": "viktorhafdal, simgr01",
   "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/viktorhafdal/BookingSystem.Api/issues"
   },
@@ -30,6 +31,12 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@types/express": "^5.0.1",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.14.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }

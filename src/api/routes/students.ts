@@ -1,34 +1,39 @@
-import express from 'express';
+import express, { Request, Response, Router } from 'express';
 
-const router = express.Router();
+const router: Router = express.Router();
 
-router.get('/', (req, res) => {
+interface StudentIdParam
+{
+  studentId: string;
+}
+
+router.get('/', (req: Request, res: Response) => {
   res.status(200).json({
     message: 'This should display a list of all students'
   })
 })
 
-router.get('/:studentId', (req, res) => {
+router.get('/:studentId', (req: Request<StudentIdParam>, res: Response) => {
   res.status(200).json({
     message: 'This should display details of a specific student',
-    staffId: req.params.staffId
+    studentId: req.params.studentId
   })
 })
 
-router.post('/', (res) => {
+router.post('/', (req: Request, res: Response) => {
   res.status(201).json({
     message: 'This should display a status, wheter a student was created or not',
     //TODO: add created staffId, once db method has completed
   })
 })
 
-router.put('/:studentId', (res) => {
+router.put('/:studentId', (req: Request<StudentIdParam>, res: Response) => {
   res.status(200).json({
     message: 'This should display a status, whether a student was updated or not'
   })
 })
 
-router.delete('/:studentId', (res) => {
+router.delete('/:studentId', (req: Request<StudentIdParam>, res: Response) => {
   res.status(200).json({
     message: 'This should display a status, whether a student was deleted or not'
   })

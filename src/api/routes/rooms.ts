@@ -1,34 +1,39 @@
-import express from 'express';
+import express, { Request, Response, Router } from 'express';
 
-const router = express.Router();
+const router: Router = express.Router();
 
-router.get('/', (req, res) => {
+interface RoomIdParam
+{
+  roomId: string;
+}
+
+router.get('/', (req: Request, res: Response) => {
   res.status(200).json({
     message: 'This should display a list of all rooms'
   })
 })
 
-router.get('/:roomId', (req, res) => {
+router.get('/:roomId', (req: Request<RoomIdParam>, res: Response) => {
   res.status(200).json({
     message: 'This should display details of a specific room',
     roomId: req.params.roomId
   })
 })
 
-router.post('/', (res) => {
+router.post('/', (req: Request, res: Response) => {
   res.status(201).json({
     message: 'This should display a status, wheter a room was created or not',
     //TODO: add created roomId, once db method has completed
   })
 })
 
-router.put('/:roomId', (res) => {
+router.put('/:roomId', (req: Request<RoomIdParam>, res: Response) => {
   res.status(200).json({
     message: 'This should display a status, whether a room was updated or not'
   })
 })
 
-router.delete('/:roomId', (res) => {
+router.delete('/:roomId', (req: Request<RoomIdParam>, res: Response) => {
   res.status(200).json({
     message: 'This should display a status, whether a room was deleted or not'
   })
